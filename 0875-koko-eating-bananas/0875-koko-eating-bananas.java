@@ -1,8 +1,8 @@
 class Solution {
     public int totalh(int[] piles,int bperh){
         int totalhour=0;
-        int n=piles.length;
-        for(int i=0;i<n;i++){
+        //int n=piles.length;
+        for(int i=0;i<piles.length;i++){
             totalhour+=Math.ceil((double)piles[i]/(double)bperh);   
         }
         return totalhour;
@@ -11,8 +11,8 @@ class Solution {
     public int minEatingSpeed(int[] piles, int h) {
         int low=0;
         int max=piles[0];
-        int n=piles.length;
-        for(int i=1;i<n;i++){
+        //int n=piles.length;
+        for(int i=1;i<piles.length;i++){
             if(piles[i]>max){
                 max=piles[i];
             }
