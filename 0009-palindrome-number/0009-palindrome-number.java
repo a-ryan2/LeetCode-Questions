@@ -1,34 +1,27 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        String s=Integer.toString(x);
-        if(s.length()==1){
-            return true;
-        }
-        // if(s.length()==2){
-        //     if(s.charAt(0)!=s.charAt(1)){
-        //         return false;
-        //     }
+        // String s=Integer.toString(x);
+        // if(s.length()==1){
         //     return true;
         // }
-        for(int i=0;i<(s.length())/2;i++){
-            if(s.charAt(i)!=s.charAt(s.length()-1-i)){
-                return false;
-            }
-        }
-        return true;
-        
-        
-        // while(x>=0){
-        //     int p=x%10;
-        //     x=x/10;
-        //     arr.add(p);
-        // }
-        // int n=arr.size();
-        // for(int i=0;i<n/2;i++){
-        //     if(arr.get(i)!=arr.get(n-1-i)){
+        // for(int i=0;i<(s.length())/2;i++){
+        //     if(s.charAt(i)!=s.charAt(s.length()-1-i)){
         //         return false;
         //     }
         // }
         // return true;
+        
+        if(x<0||x!=0&&x%10==0){
+            return false;
+        }
+        int rev=0;
+        while(x>rev){
+            rev=rev*10+x%10;
+            x=x/10;
+        }
+        if(x==rev||x==rev/10){
+            return true;
+        }
+        return false;
     }
 }
