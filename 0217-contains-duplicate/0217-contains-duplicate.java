@@ -7,13 +7,18 @@ class Solution {
         //     }
         //     s.add(nums[i]);
         // }
+        //return false;
+        // Arrays.sort(nums);
+        // for(int i=0;i<nums.length-1;i++){
+        //     if(nums[i]==nums[i+1]){
+        //         return true;
+        //     }
+        // }
         // return false;
-        Arrays.sort(nums);
-        for(int i=0;i<nums.length-1;i++){
-            if(nums[i]==nums[i+1]){
-                return true;
-            }
-        }
-        return false;
+        HashSet<Integer> s = new HashSet<Integer>();
+		 for(int i : nums)
+			 if(!s.add(i))// if there is same
+				 return true; 
+		 return false;
     }
 }
