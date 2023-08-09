@@ -12,21 +12,38 @@ class Solution {
         //     }
         // }
         // return sum;
+        HashMap<Integer,Integer> s=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            if(s.containsKey(nums[i])){
+                s.put(nums[i],s.get(nums[i])+1);
+            }
+            else
+                s.put(nums[i],1);
+        }
+        int sum=0;
+        for(Map.Entry<Integer,Integer> e:s.entrySet()){
+            if(e.getValue()==1){
+                sum=sum+e.getKey();
+            }
+        }
+        return sum;
         
-        int[] counter = new int[101];
-	int sum = 0;
-	for (int num : nums) {
-		counter[num]++;		// increment count of each num
+        
+        
+        
+        
+//     int[] counter = new int[101];
+// 	int sum = 0;
+// 	for (int num : nums) {
+// 		counter[num]++;		
+// 		if (counter[num] == 1)	
+// 			sum += num;	
 
-		if (counter[num] == 1)	// for count == 1, we know its first interaction
-			sum += num;			// and we add it to sum. We are adding potential 
-								// future duplicates as well
+// 		if (counter[num] == 2)	
+// 			sum -= num;			
 
-		if (counter[num] == 2)	// for count == 2, we know its a duplicate
-			sum -= num;			// and we subtract it (Revert of first step for duplicate). 
-								// Now it doesn't affect if count increases to 3,4,5... 
-	}
-	return sum;
+// 	}
+// 	return sum;
 
                 
     }
