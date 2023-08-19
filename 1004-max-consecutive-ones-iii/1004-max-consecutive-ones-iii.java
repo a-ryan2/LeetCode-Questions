@@ -5,8 +5,10 @@ class Solution {
             if(nums[i]==0){
                 k--;
             }
-            if(k<0&&nums[j++]==0){
-                k++;
+            if(k<0){
+                if(nums[j++]==0){
+                    k++;
+                }
             }
         }
         return i-j;
